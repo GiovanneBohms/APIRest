@@ -12,10 +12,11 @@ const users = [
 ]
 
 
+app.get('/users/:id', (req, res)=>{
+    const UserId = parseInt(req.params.id)
+    const NameById = users.find( user => user.id === UserId)
 
-app.get('/', (req, res)=>{
-
-    res.send(users)
+    res.send(NameById)
 })
 
 app.listen (port, ()=>{
