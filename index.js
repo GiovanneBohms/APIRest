@@ -23,6 +23,24 @@ app.get('/users/:id', (req, res)=>{
     res.send(NameById)
 })
 
+app.put('/users/:id',(req,res)=>{
+    const userID = parseInt(req.params.id);
+    const {name, patins} = req.body;
+
+    const userIndex = users.findIndex(user => user.id===userID)
+
+    if(userIndex === -1){
+        return res.status(404).json({mensage: 'usuário não encontrado'});
+    }
+    users[userIndex] = {
+        ...users[userIndex],
+        name: name || users[userIndex].name,
+        patins: patins || users[userIndex].patins
+    };
+
+    res.json(users[userIndex])
+
+})
 
 
 app.post ('/users', (req,res)=>{
