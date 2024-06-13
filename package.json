@@ -1,15 +1,16 @@
 {
-  "name": "apirest",
+  "name": "minha-api",
   "version": "1.0.0",
-  "description": "desafio técnico",
-  "main": "apirest.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-    "nodemon": "^3.1.3"
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
