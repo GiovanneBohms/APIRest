@@ -42,7 +42,6 @@ app.put('/users/:id',(req,res)=>{
 
 })
 
-
 app.post ('/users', (req,res)=>{
     const {name, patins} = req.body;
 
@@ -58,6 +57,16 @@ app.post ('/users', (req,res)=>{
 
     users.push(newUser);
     res.status(201).json(newUser)
+})
+
+app.delete('/users/:id', (req,res)=>{
+    const userId = parseInt(req.params.id);
+    const userIndex = users.findIndex(user => user.id === userId);
+    if (userIndex === -1){
+        return res.status(404).json({message:'Usuário não encontrado'})
+    }
+    users.splice(userIndex, 1);
+    res.json({message: 'usuário removido com sucesso'})
 })
 
 app.listen (port, ()=>{
