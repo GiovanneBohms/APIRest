@@ -14,7 +14,8 @@ Esta é uma API simples desenvolvida em Node.js utilizando o framework Express, 
 
 - **GET /users**: Retorna todos os usuários cadastrados.
 - **GET /users/:id**: Retorna um usuário específico pelo seu ID.
-- **POST /users**: Adiciona um novo usuário. Requer um corpo JSON com os campos `name` e `patins`.
+- **POST /users**: Adiciona um novo usuário. Requer um corpo JSON com os campos `name` e `patins`:
+
 POST /users
 Content-Type: application/json
 
@@ -23,11 +24,14 @@ Content-Type: application/json
   "patins": "Marca do Patins"
 }
 
-- **PUT /users/:id**: Atualiza as informações de um usuário existente pelo seu ID. Aceita um corpo JSON com os campos `name` e/ou `patins`.
+- **PUT /users/:id**: Atualiza as informações de um usuário existente pelo seu ID. Aceita um corpo JSON com os campos `name` e/ou `patins`:
+
+PUT /users/:id
+Content-Type: application/json
+
+{
+  "name": "Nome Atualizado",
+  "patins": "Marca de Patins Atualizada"
+}
+
 - **DELETE /users/:id**: Remove um usuário pelo seu ID.
-
-## Como Usar
-
-1. Clone este repositório:
-   ```sh
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
