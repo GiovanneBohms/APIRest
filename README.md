@@ -25,7 +25,7 @@ Content-Type: application/json
 }
 ```
 - **PUT /users/:id**: Atualiza as informações de um usuário existente pelo seu ID. Aceita um corpo JSON com os campos `name` e/ou `patins`:
-
+```
 PUT /users/:id
 Content-Type: application/json
 
@@ -33,5 +33,5 @@ Content-Type: application/json
   "name": "Nome Atualizado",
   "patins": "Marca de Patins Atualizada"
 }
-
+```
 - **DELETE /users/:id**: Remove um usuário pelo seu ID.
