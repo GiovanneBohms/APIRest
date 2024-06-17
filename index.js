@@ -72,3 +72,5 @@ app.delete('/users/:id', (req,res)=>{
 app.listen (port, ()=>{
     console.log(`servidor escutando na porta ${port}`);
 })
+
+//teste
